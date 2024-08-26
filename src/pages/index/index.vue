@@ -4,15 +4,22 @@
 		<view>
 			<text class="title">{{title}}</text>
 		</view>
+		<view>
+			<text>这是token{{ isAuthenticated }}</text>
+		</view>
 	</view>
 </template>
 
 <script>
+	import { mapState, mapGetters } from 'vuex'
 	export default {
 		data() {
 			return {
-				title: 'Hello'
+				title: 'add vuex'
 			}
+		},
+		computed: {
+			...mapGetters('auth', ['isAuthenticated'])
 		},
 		onLoad() {
 
